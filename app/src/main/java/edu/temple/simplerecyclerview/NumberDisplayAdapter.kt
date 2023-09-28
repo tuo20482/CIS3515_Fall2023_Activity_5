@@ -16,6 +16,9 @@ class NumberDisplayAdapter (private val numbers: Array<Int>, private val modifyT
         // enumerate views inside layout
         val textView: TextView = layout.findViewById(R.id.textView)
 
+        init {
+            textView.setOnClickListener { modifyTextSize(numbers[adapterPosition]) }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NumberViewHolder {
